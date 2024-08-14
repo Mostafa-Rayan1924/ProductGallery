@@ -1,7 +1,10 @@
-import { Inter } from "next/font/google";
+import { Work_Sans } from "next/font/google";
 import "./globals.css";
+import Navbar from "./_utility/Navbar";
+import Footer from "./_utility/Footer";
+import ThemeContextProvider from "./context/ThemeContext";
 
-const inter = Inter({ subsets: ["latin"] });
+const WorkSans = Work_Sans({ subsets: ["latin"], weights: ["400", "700"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -10,8 +13,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html className=" overflow-x-hidden" lang="en">
+      <body className={`${WorkSans.className}  dark:bg-black  bg-white`}>
+        <ThemeContextProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeContextProvider>
+      </body>
     </html>
   );
 }
