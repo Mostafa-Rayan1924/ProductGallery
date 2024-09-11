@@ -10,7 +10,7 @@ const productDetails = async ({ params }) => {
     console.log(e);
   }
   return (
-    <section>
+    <section className="dark:bg-black dark:text-white pb-4">
       <div className="container">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
           <div className="relative h-64 overflow-hidden rounded-lg sm:h-80 lg:order-last lg:h-full">
@@ -24,7 +24,7 @@ const productDetails = async ({ params }) => {
           <div className="lg:py-24">
             <h2 className="text-3xl font-bold sm:text-4xl">{data.title}</h2>
 
-            <p className="mt-4 text-gray-600">{data.description}</p>
+            <p className="my-4 text-gray-600">{data.description}</p>
             <div className="flex items-center gap-2">
               <a
                 href="#"
@@ -33,7 +33,7 @@ const productDetails = async ({ params }) => {
               </a>
               <a
                 href="#"
-                className=" rounded bg-transparent border border-primary text-black px-4 py-1 text-sm font-medium  transition  focus:outline-none focus:ring focus:ring-yellow-400">
+                className=" rounded bg-transparent border border-primary dark:text-white text-black px-4 py-1 text-sm font-medium  transition  focus:outline-none focus:ring focus:ring-yellow-400">
                 {data.price}$
               </a>
 
